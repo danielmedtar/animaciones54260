@@ -1,0 +1,322 @@
+@charset "UTF-8";
+/*PALETAS DE COLORES*/
+/*VARIABLES PARA MEDIDAS*/
+/*MIXINS: especie de bolsitas de codigo*/
+/*MIXIN SIN PARAMETROS*/
+/*MIXINS CON PARAMETROS*/
+/*parametros*/
+/*CONDICIONALES*/
+/*OPERACIONES MATEMATICAS*/
+/*SUMA = valor o una variable + numero*/
+/*RESTA = valor o una variable - numero*/
+/*MULTIPLICACION = valor o una variable * numero*/
+/*DIVISION = calc(valor o variable / numero divisor) */
+h1 {
+  margin-bottom: 5px;
+}
+
+/*APLICANDO MIXIN*/
+#principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 {
+  /*ancho, alto*/
+  width: 50px;
+  height: 100px;
+}
+
+.img2 {
+  width: 200px;
+  height: 300px;
+}
+
+/*EXTEND*/
+/*EL EXTEND Y SASS EN GENERAL SON 100% SEMANTICOS Y CUIDADORES DE LAS BUENAS PRÁCTICAS*/
+.botones, .boton--cancelar, .boton--aceptar {
+  width: 150px;
+  padding: 8px 10px;
+  border-radius: 20px;
+}
+
+.boton--aceptar {
+  background-color: green;
+}
+
+.boton--cancelar {
+  background-color: red;
+}
+
+/*CONDICIONALES*/
+body {
+  /*hacia la izquierda*/
+  /*
+  * Created with https://www.css-gradient.com
+  * Gradient link: https://www.css-gradient.com/?c1=5536c6&c2=b7b1bd&gt=l&gd=dbr
+  */
+  background: #5536C6;
+  background: linear-gradient(315deg, #5536C6, #B7B1BD);
+}
+
+/*TRANSFORMACIONES*/
+.cajita {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  /*TRANSLATE*/
+  /*Atajo para mover en los ejes X y eje Y*/
+  /*Para eje X (izquierda y derecha)*/
+  /*Para eje Y (arriba y abajo)*/
+  /*ROTATE: tiene opciones para los ejes con rotateX, rotateY, rotateZ*/
+  /*SCALE: Los valores no necesitan unidades de medida*/
+  /*SKEW (SESGAR, DEFORMAR O TORCER)*/
+  /*TRANSICIONES*/
+  transition: width 2s;
+  /* propiedad duración */
+}
+
+/*EJEMPLO PARA ESCALAR UN ELEMENTO*/
+.cajita:hover {
+  /*escalarlo en los dos ejes, o en uno solo usando scaleX o scaleY*/
+  /*la transicion funciona en 2 partes. La primera, escribir la transition en el elemento, y la 2da, escribir lo que va a cambiar en el hover*/
+  width: 400px;
+}
+
+.menu-ejemplo {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-ejemplo li a {
+  text-decoration: none;
+  color: green;
+  background-color: black;
+  padding: 5px 10px;
+  transition: all 0.5s;
+}
+
+.menu-ejemplo li a:hover {
+  background-color: green;
+  color: black;
+}
+
+.foco {
+  width: 150px;
+  transition: width 3s;
+}
+
+.foco:focus {
+  width: 300px;
+}
+
+/*keyframes*/
+#animacion {
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  /*Nombre*/
+  animation-name: un_efecto;
+  /*Cuanto va a durar el bucle*/
+  animation-iteration-count: infinite;
+  /*Propiedad de visualizacion del efecto*/
+  animation-timing-function: ease-in;
+  /*duracion de la animacion*/
+  animation-duration: 2s;
+  /*Cuando empieza*/
+  animation-delay: 10s;
+}
+
+/*decido qué va a pasar en esta animacion*/
+@keyframes un_efecto {
+  0% {
+    width: 100px;
+  }
+  10% {
+    width: 50px;
+  }
+  25% {
+    width: 300px;
+  }
+  50% {
+    width: 200px;
+    background-color: red;
+  }
+  75% {
+    width: 300px;
+  }
+  100% {
+    width: 100px;
+    background-color: green;
+  }
+}
+/*BARRA PROGRESO*/
+.section-barra {
+  display: flex;
+  justify-content: center;
+}
+
+.barra-progreso {
+  margin-top: 30px;
+  width: 60%;
+  border: solid 1px;
+  height: 15px;
+}
+
+.barra-rellena {
+  border: solid 1px;
+  height: 13px;
+  width: 40%;
+  background-color: green;
+  animation: rellenando 3s;
+}
+
+@keyframes rellenando {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40%;
+  }
+}
+h1 {
+  animation-duration: 2s;
+  animation-name: aparecer;
+  animation-iteration-count: infinite;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.icono-insta {
+  font-size: 60px;
+}
+
+/*BUCLES*/
+/*Bucle for*/
+/*$i quiere decir iteracion, en programacion es buena practica para los bucles que las variables de las vueltas se llamen i*/
+.col-1 {
+  width: 10%;
+}
+
+.col-2 {
+  width: 20%;
+}
+
+.col-3 {
+  width: 30%;
+}
+
+.col-4 {
+  width: 40%;
+}
+
+.col-5 {
+  width: 50%;
+}
+
+.col-6 {
+  width: 60%;
+}
+
+.col-7 {
+  width: 70%;
+}
+
+.col-8 {
+  width: 80%;
+}
+
+.col-9 {
+  width: 90%;
+}
+
+.col-10 {
+  width: 100%;
+}
+
+.bucles:nth-of-type(1) {
+  font-size: 19px;
+  background-color: #9a9a9a;
+}
+
+.bucles:nth-of-type(2) {
+  font-size: 19px;
+  background-color: gray;
+}
+
+.bucles:nth-of-type(3) {
+  font-size: 19px;
+  background-color: #676767;
+}
+
+.bucles:nth-of-type(4) {
+  font-size: 19px;
+  background-color: #4d4d4d;
+}
+
+.bucles:nth-of-type(5) {
+  font-size: 19px;
+  background-color: #343434;
+}
+
+/*each = cada */
+/*EJEMPLO DIAPO*/
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.black {
+  background-color: black;
+}
+
+/*EJEMPLO PROFE*/
+/*una*/ /*dos*/ /*tres*/
+.texto-grande {
+  font-size: 32px;
+}
+
+.texto-mediano {
+  font-size: 24px;
+}
+
+.texto-chico {
+  font-size: 18px;
+}
+
+/*Maps*/
+/*Creamos el bucle para usar los valores del mapa*/
+.btn--twitter {
+  background-color: #55acee;
+}
+
+.btn--facebook {
+  background-color: #3a5795;
+}
+
+.btn--send-mail {
+  background-color: #C25E30;
+}
+
+/*map get*/
+div {
+  background-color: #3673D9;
+  text-align: center;
+}
+
+/*PARA SUS PROYECTOS FINALES USAR OBLIGATORIAMENTE: VARIABLES, ANIDACION, ARCHIVOS PARTIALS, MIXINS Y EXTENDS*/
+
+/*# sourceMappingURL=styles.css.map */
